@@ -1,0 +1,26 @@
+.status {
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+
+  &.active {
+    background: #e6f7f4;
+    color: #39CD62;
+  }
+
+  &.inactive {
+    background: #f5f5f7;
+    color: #545F7D;
+  }
+
+  &.pending {
+    background: #fff7e6;
+    color: #E9B200;
+  }
+
+  &.blacklisted {
+    background: #fdecec;
+    color: #E4033B;
+  }
+}

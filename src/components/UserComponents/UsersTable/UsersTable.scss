@@ -1,0 +1,156 @@
+.users-table {
+//   background: #ffffff;
+  
+  margin-top: 40px;
+}
+
+/* Table wrapper for controlled scroll */
+.table-wrapper {
+  overflow-x: auto;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 900px; // keeps desktop fidelity
+
+  th {
+    text-align: left;
+    font-size: 0.7rem;
+    color: #545f7d;
+    padding-bottom: 1rem;
+    white-space: nowrap;
+
+    .th-content {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .filter-icon {
+      font-size: 1.2rem;
+      color: #545f7d;
+      cursor: pointer;
+    }
+  }
+
+  td {
+    padding: 1.2rem 0;
+    font-size: 0.85rem;
+    color: #545f7d;
+    border-bottom: 1px solid #eef0f6;
+    white-space: nowrap;
+  }
+
+.actions {
+  position: relative;
+  text-align: right;
+
+  .dots-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    svg {
+      font-size: 1.1rem;
+      color: #545f7d;
+    }
+  }
+}
+
+}
+
+/* ================= PAGINATION ================= */
+
+.pagination {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #545f7d;
+
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    select {
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      border: 1px solid #dfe3eb;
+      background: #f5f7fb;
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    span {
+      cursor: pointer;
+    }
+
+    .active {
+      font-weight: 600;
+      color: #213f7d;
+    }
+
+    .dots {
+      cursor: default;
+    }
+
+    .nav-btn {
+      background: #f5f7fb;
+      border: none;
+      padding: 0.35rem;
+      border-radius: 4px;
+      cursor: pointer;
+
+      svg {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+.nav-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .users-table {
+    padding: 1rem;
+  }
+
+  .pagination {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+}
+
+
+/* Mobile */
+@media (max-width: 600px) {
+  table {
+    min-width: 700px;
+  }
+
+  .pagination__right {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+     .filter-icon {
+      font-size: 0.8rem;
+    }
+}

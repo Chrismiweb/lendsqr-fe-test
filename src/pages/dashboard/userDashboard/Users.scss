@@ -1,0 +1,12 @@
+/* Users.scss */
+.users-page {
+  display: flex;
+  flex-direction: column;
+//   gap: 2.5rem;
+
+  &__title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #213F7D;
+  }
+}
