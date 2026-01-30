@@ -1,11 +1,6 @@
 import {
-  MdDashboard,
   MdPeople,
-  MdWork,
   MdAccountBalance,
-  MdSettings,
-  MdOutlineSavings,
-  MdOutlineReport,
 } from "react-icons/md";
 import { IoBriefcase } from "react-icons/io5";
 import { FaSackDollar } from "react-icons/fa6";

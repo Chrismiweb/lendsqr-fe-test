@@ -1,4 +1,4 @@
-import { useEffect, useState, type SetStateAction } from "react";
+import { useEffect, useState } from "react";
 import "./UsersTable.scss";
 import StatusPill from "../StatusPill/StatusPill";
 import { HiOutlineDotsVertical } from "react-icons/hi";
@@ -6,7 +6,6 @@ import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { BsFilter } from "react-icons/bs";
 import RowActionMenu from "../RowActionMenu/RowActionMenu";
 import { fetchUsers} from "../../../services/usersApi";
-import { useNavigate } from "react-router-dom"; 
 import type { User } from "../../../services/usersApi";
 import FilterPanel from "./FilterPanel";
 
@@ -230,7 +229,7 @@ const resetTable = () => {
                 page === totalPages ||
                 (page >= currentPage - 1 && page <= currentPage + 1)
             )
-            .map((page, idx, arr) => (
+            .map((page) => (
                 <span
                 key={page}
                 className={page === currentPage ? "active" : ""}
