@@ -2,21 +2,19 @@ import "./Login.scss";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+
 const Login = () => {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
 
-    if (!email || !password) return;
 
-    // fake auth
-    localStorage.setItem("lendsqr:auth", "true");
-    navigate("/");
-  };
+  navigate("/users"); // ✅ redirect to dashboard
+};
 
   return (
     <div className="login">
@@ -33,9 +31,9 @@ const Login = () => {
 
       {/* Right */}
       <div className="login__right">
-        <form className="login__form" onSubmit={handleSubmit}>
+        <form className="login__form" onSubmit={handleLogin}>
           <h1>Welcome!</h1>
-          <p>Enter details to login.</p>
+          <p>Enter details to login.<br/> This is a demo page, so no input is required.</p>
 
           <input
             type="email"
@@ -62,10 +60,8 @@ const Login = () => {
           <a className="forgot" href="#">
             FORGOT PASSWORD?
           </a>
+`       <button className="login-btn" type="submit"> LOG IN </button>
 
-          <button className="login-btn" type="submit">
-            LOG IN
-          </button>
         </form>
       </div>
     </div>
